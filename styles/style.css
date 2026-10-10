@@ -1,0 +1,10 @@
+body {
+  background-color: #f5f5f5;
+  color: #1f1f1f;
+  font-family: var(--font-main);
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 400;
+}

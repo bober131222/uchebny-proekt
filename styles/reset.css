@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1 {
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
