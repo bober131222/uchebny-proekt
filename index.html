@@ -2,14 +2,118 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Учебный дизайн-проект">
-  <title>Новый проект</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Без поводка — бар для собак и их друзей.">
+  <title>Без поводка — бар для собак</title>
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <main class="page">
-    <h1>Новый проект</h1>
-  </main>
+  <input class="mode-input" type="radio" name="mode" id="look" checked>
+  <input class="mode-input" type="radio" name="mode" id="smell">
+  <div class="page">
+    <img class="tail light-image" src="assets/bp-tail-look.svg" alt="">
+    <img class="tail dark-image" src="assets/bp-tail-smell.svg" alt="">
+
+    <!-- 1. Бар -->
+    <section class="section hero" id="bar">
+      <header class="header">
+        <a class="brand" href="#bar">
+          <img class="light-image" src="assets/bp-logo-look.svg" alt="">
+          <img class="dark-image" src="assets/bp-logo-smell.svg" alt="">
+          <span><strong>БЕЗ ПОВОДКА</strong><small>БАР ДЛЯ СОБАК</small></span>
+        </a>
+        <nav class="navigation" aria-label="Разделы сайта">
+          <a href="#bar">Бар</a><a href="#menu">Меню</a><a href="#afisha">Афиша</a><a href="#rules">Правила</a>
+        </nav>
+        <div class="switch" aria-label="Режим оформления">
+          <label for="look">Смотрю</label><label for="smell">Чую</label>
+        </div>
+      </header>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Зашёл<br>на одну<br>кружку.</h1>
+          <p>Бар для собак.<br>Вечер без команды «домой».</p>
+          <a class="accent italic" href="#menu">Остаться ещё ↓</a>
+        </div>
+        <div class="hero-image">
+          <img class="light-image" src="assets/bp-hero-look.svg" alt="Такса с кружкой за барной стойкой">
+          <img class="dark-image" src="assets/bp-hero-smell.svg" alt="Такса с кружкой за барной стойкой">
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Меню -->
+    <section class="section menu" id="menu">
+      <div class="menu-content">
+        <p class="eyebrow">01 / МЕНЮ</p>
+        <h2>Сначала —<br>по бульону.</h2>
+        <div class="menu-columns">
+          <div><h3>Бульоны</h3><ul><li>Куриный</li><li>Говяжий</li><li>Овощной</li></ul></div>
+          <div><h3>К кружке</h3><ul><li>Хрустящие лакомства</li><li>Сушёное мясо</li></ul></div>
+        </div>
+        <p class="accent italic menu-note">ещё по одной · ещё по одной</p>
+      </div>
+      <div class="menu-art">
+        <img class="light-image" src="assets/bp-mugs-look.svg" alt="Две кружки с отпечатками лап">
+        <img class="dark-image" src="assets/bp-mugs-smell.svg" alt="Две кружки с отпечатками лап">
+      </div>
+    </section>
+
+    <!-- 3. Компания -->
+    <section class="section company" id="company">
+      <div class="company-copy">
+        <h2>Потом<br>подтянулись</h2>
+        <p>После прогулки — к стойке.<br>Здесь встречаются, делятся<br>историями и заказывают<br>ещё по кружке.</p>
+        <p class="accent italic">Любой породы.<br>Одной компании.</p>
+      </div>
+      <div class="company-art"><strong>СВОИ</strong>
+        <img class="light-image" src="assets/bp-company-look.svg" alt="Компания собак за барной стойкой">
+        <img class="dark-image" src="assets/bp-company-smell.svg" alt="Компания собак за барной стойкой">
+      </div>
+    </section>
+
+    <!-- 4. Афиша -->
+    <section class="section events" id="afisha">
+      <div class="events-copy">
+        <h2>И тут заиграло.</h2>
+        <div class="event-caption"><span class="eyebrow">АФИША</span><em>Пример программы · даты уточняются</em></div>
+        <p class="event-label">Музыкальные вечера</p>
+        <article><h3>Рок у стойки</h3><p>Живой звук и собачий хор.</p></article>
+        <article><h3>Вечер винила</h3><p>Пластинки, бульон и разговоры.</p></article>
+      </div>
+      <div class="events-art"><p class="accent italic">ЕЩЁ<br>ЕЩЁ</p>
+        <img class="light-image" src="assets/bp-music-look.svg" alt="Собака выступает на сцене">
+        <img class="dark-image" src="assets/bp-music-smell.svg" alt="Собака выступает на сцене">
+      </div>
+    </section>
+
+    <!-- 5. Правила -->
+    <section class="section rules" id="rules">
+      <h2>Вечер длинный.<br>Правила короткие.</h2>
+      <div class="rules-content">
+        <ol class="rules-list">
+          <li><span>1</span><div><h3>Не наступай на хвост.</h3><p>Оставь место тем, кто проходит к стойке.</p></div></li>
+          <li><span>2</span><div><h3>Не лезь в чужую кружку.</h3><p>Бульон и лакомства — с разрешения соседа.</p></div></li>
+          <li><span>3</span><div><h3>Свои здесь все.</h3><p>Любая порода и размер — повод познакомиться.</p></div></li>
+        </ol>
+        <div class="rules-art">
+          <p class="accent italic light-copy">Свободно.<br>Но с уважением.</p>
+          <p class="accent italic dark-copy">Чую,<br>но не трогаю.</p>
+          <img class="light-image" src="assets/bp-puppy-look.svg" alt="Маленькая собака">
+          <img class="dark-image" src="assets/bp-puppy-smell.svg" alt="Маленькая собака">
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. До встречи -->
+    <section class="section visit" id="visit">
+      <h2>Кажется,<br>задержался.</h2>
+      <p class="accent italic goodbye">До следующей прогулки.</p>
+      <p>Здесь уже знают, что налить.<br>Осталось выбрать следующий вечер.</p>
+      <div class="visit-links"><a href="#menu">Ещё по бульону ↑</a><a href="#afisha">Посмотреть афишу ↑</a></div>
+      <div class="visit-info"><div><small>ГДЕ ВСТРЕЧАЕМСЯ</small><p>Адрес — после согласования</p></div><div><small>КОГДА ЗАГЛЯНУТЬ</small><p>Часы — после согласования</p></div></div>
+      <footer class="footer"><span>БЕЗ ПОВОДКА</span><span>Учебный проект</span></footer>
+    </section>
+  </div>
 </body>
 </html>

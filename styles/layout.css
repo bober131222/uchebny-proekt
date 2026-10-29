@@ -1,10 +1,105 @@
-body {
-  min-height: 100vh;
+:root {
+  --paper: #f2ecdd;
+  --ink: #080808;
+  --red: #d8372b;
 }
+html { scroll-behavior: smooth; }
+body { background: var(--paper); font-family: var(--font-main); }
+.mode-input { position: absolute; opacity: 0; }
+.page { position: relative; width: 1182px; margin: 0 auto; background: var(--paper); color: var(--ink); overflow: hidden; }
+.tail { position: absolute; z-index: 1; top: 0; left: 0; width: 1182px; height: 4130px; pointer-events: none; }
+.section { position: relative; height: 665px; }
+.section > * { position: relative; z-index: 2; }
+h1, h2, h3 { font-weight: 600; line-height: .95; }
+h2 { font-size: 76px; }
+p { line-height: 1.25; }
+.accent, .eyebrow { color: var(--red); }
+.italic { font-style: italic; }
+.eyebrow { font-size: 15px; }
+a:hover { color: var(--red); }
+a:focus-visible, .mode-input:focus-visible ~ .page label { outline: 2px solid var(--red); }
+.dark-image, .dark-copy { display: none; }
+#smell:checked ~ .page { background: var(--ink); color: var(--paper); }
+#smell:checked ~ .page .light-image, #smell:checked ~ .page .light-copy { display: none; }
+#smell:checked ~ .page .dark-image, #smell:checked ~ .page .dark-copy { display: block; }
 
-.page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 32px;
-}
+/* Шапка и первый экран */
+.header { z-index: 3; height: 82px; padding: 25px 55px 0; display: flex; align-items: flex-start; }
+.brand { display: flex; align-items: center; gap: 14px; line-height: 1; white-space: nowrap; }
+.brand img { width: 62px; height: 58px; }
+.brand strong { display: block; font-size: 24px; }
+.brand small { display: block; margin-top: 4px; font-size: 11px; }
+.navigation { display: flex; gap: 34px; align-items: center; margin: 14px 0 0 auto; font-size: 18px; }
+.switch { display: flex; margin: 4px 0 0 55px; border: 1px solid currentColor; border-radius: 30px; overflow: hidden; font-size: 17px; }
+.switch label { padding: 7px 20px; cursor: pointer; }
+#look:checked ~ .page label[for="look"] { color: var(--paper); background: var(--ink); border-radius: 30px; }
+#smell:checked ~ .page label[for="smell"] { color: var(--paper); background: var(--red); border-radius: 30px; }
+.hero-content { display: flex; height: 583px; }
+.hero-text { width: 470px; padding: 5px 0 0 55px; flex-shrink: 0; }
+.hero-text h1 { font-weight: 600; font-size: 122px; line-height: .85; }
+.hero-text p { margin-top: 45px; font-size: 27px; }
+.hero-text a { display: inline-block; margin-top: 30px; font-size: 25px; }
+.hero-image { width: 712px; margin-top: -82px; flex-shrink: 0; }
+.hero-image img { width: 702px; max-width: none; }
+
+/* Меню */
+.menu { display: flex; align-items: flex-start; padding: 80px 60px 0 172px; }
+.menu-content { width: 560px; flex-shrink: 0; }
+.menu h2 { margin-top: 25px; }
+.menu-columns { display: flex; gap: 45px; margin-top: 45px; }
+.menu-columns > div { width: 220px; }
+.menu-columns h3 { color: var(--red); border-bottom: 1px solid var(--red); padding-bottom: 7px; font-size: 29px; }
+.menu-columns ul { padding: 13px 0 0; font-size: 24px; line-height: 1.45; }
+.menu-note { margin-top: 16px; font-size: 19px; }
+.menu-art { width: 365px; margin: 145px 0 0 -10px; }
+.menu-art img { width: 100%; }
+
+/* Компания */
+.company { display: flex; padding: 62px 55px 0; }
+.company-copy { width: 485px; flex-shrink: 0; }
+.company-copy p { margin-top: 65px; font-size: 26px; }
+.company-copy p.accent { margin-top: 75px; }
+.company-art { align-self: flex-end; width: 660px; margin: 0 0 95px -40px; text-align: center; }
+.company-art strong { display: block; font-size: 116px; font-weight: 600; line-height: 1; }
+.company-art img { width: 100%; }
+
+/* Афиша */
+.events { display: flex; padding: 55px 50px 0 160px; }
+.events-copy { width: 520px; flex-shrink: 0; }
+.events-copy h2 { white-space: nowrap; }
+.event-caption { display: flex; justify-content: space-between; align-items: center; margin-top: 58px; }
+.event-caption em { font-size: 15px; }
+.event-label { margin-top: 20px; padding: 7px 15px; background: var(--red); color: var(--paper); font-size: 22px; font-weight: 600; }
+.events article { width: 330px; margin: 15px 0; padding-bottom: 10px; border-bottom: 1px solid var(--red); }
+.events article h3 { font-size: 33px; }
+.events article p { margin-top: 8px; font-size: 19px; }
+.events-art { width: 510px; margin: 15px 0 0 -45px; }
+.events-art > p { margin-left: 200px; font-size: 38px; line-height: .9; }
+.events-art img { width: 100%; margin-top: 30px; }
+
+/* Правила */
+.rules { height: 750px; padding: 75px 55px 0; }
+.rules h2 { font-size: 66px; }
+.rules-content { display: flex; margin-top: 48px; }
+.rules-list { width: 740px; padding: 0; }
+.rules-list li { display: flex; align-items: flex-start; gap: 42px; margin-bottom: 22px; }
+.rules-list li > span { width: 60px; color: var(--red); font-size: 88px; line-height: .9; }
+.rules-list li > div { width: 635px; padding: 8px 0 14px; border-bottom: 1px solid var(--red); }
+.rules-list h3 { font-size: 33px; }
+.rules-list p { margin-top: 12px; font-size: 20px; }
+.rules-art { width: 340px; padding-top: 0; }
+.rules-art p { margin-left: 38px; font-size: 27px; }
+.rules-art img { width: 100%; margin-top: 45px; }
+
+/* До встречи */
+.visit { height: 720px; padding: 80px 55px 0; }
+.visit h2 { font-size: 85px; }
+.visit > p:not(.goodbye) { margin-top: 25px; font-size: 23px; }
+.goodbye { margin-top: 24px; font-size: 29px; }
+.visit-links { display: flex; width: 730px; gap: 70px; margin-top: 50px; padding-bottom: 20px; border-bottom: 1px solid var(--red); color: var(--red); font-size: 26px; }
+.visit-links a { width: 300px; }
+.visit-info { display: flex; gap: 70px; margin-top: 22px; }
+.visit-info > div { width: 300px; }
+.visit-info small { font-size: 14px; }
+.visit-info p { margin-top: 6px; font-size: 18px; }
+.footer { display: flex; gap: 380px; margin-top: 48px; font-size: 15px; }
