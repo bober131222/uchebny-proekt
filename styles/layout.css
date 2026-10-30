@@ -5,7 +5,7 @@ html {
 
 html body {
   background: #f2ecdd;
-  font-family: "EB Garamond", Georgia, serif;
+  font-family: var(--font-main);
 }
 
 .page {
