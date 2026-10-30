@@ -19,6 +19,9 @@ html body {
   width: 1200px;
   margin: 0 auto;
   overflow: hidden;
+  background-image: url("../assets/bp-tail-look.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 h1, h2, h3 {
@@ -38,7 +41,7 @@ a:hover {
   color: #d8372b;
 }
 
-a:focus-visible, .mode-input:focus-visible ~ .page label {
+a:focus-visible {
   outline: 2px solid #d8372b;
 }
 
@@ -55,16 +58,7 @@ a:focus-visible, .mode-input:focus-visible ~ .page label {
 }
 
 
-/* Хвост — отдельное украшение на фоне, содержимое находится поверх него */
-.tail {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
+/* Отступы оставляют место для хвоста на фоне */
 .section {
   position: relative;
   z-index: 1;
@@ -82,31 +76,6 @@ a:focus-visible, .mode-input:focus-visible ~ .page label {
   width: 100%;
   height: 100%;
   pointer-events: none;
-}
-
-
-/* Переключение двух режимов без JavaScript */
-.mode-input {
-  position: absolute;
-  opacity: 0;
-}
-
-.dark-image, .dark-copy {
-  display: none;
-}
-
-#smell:checked ~ .page {
-  min-width: 1200px;
-  background: #080808;
-  color: #f2ecdd;
-}
-
-#smell:checked ~ .page .light-image, #smell:checked ~ .page .light-copy {
-  display: none;
-}
-
-#smell:checked ~ .page .dark-image, #smell:checked ~ .page .dark-copy {
-  display: block;
 }
 
 
@@ -152,36 +121,6 @@ a:focus-visible, .mode-input:focus-visible ~ .page label {
   gap: 30px;
   margin-left: auto;
   font-size: 18px;
-}
-
-.switch {
-  background: #f2ecdd;
-  display: flex;
-  border: 1px solid currentColor;
-  border-radius: 30px;
-  overflow: hidden;
-  font-size: 17px;
-}
-
-.switch label {
-  padding: 7px 20px;
-  cursor: pointer;
-}
-
-#look:checked ~ .page label[for="look"] {
-  color: #f2ecdd;
-  background: #080808;
-  border-radius: 30px;
-}
-
-#smell:checked ~ .page .switch {
-  background: #080808;
-}
-
-#smell:checked ~ .page label[for="smell"] {
-  color: #f2ecdd;
-  background: #d8372b;
-  border-radius: 30px;
 }
 
 .hero-content {
